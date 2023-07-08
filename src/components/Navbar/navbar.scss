@@ -1,0 +1,35 @@
+nav.navbar {
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0rem 4rem;
+  height: 5rem;
+  width: 100vw;
+  color: var(--light);
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--darkest-bg);
+    opacity: 0.7;
+  }
+  > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .right {
+    > * {
+      padding: 0.4rem 0.8rem;
+      margin: 0 0.4rem;
+    }
+  }
+}

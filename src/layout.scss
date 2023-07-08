@@ -1,0 +1,7 @@
+.App .page-view {
+  width: 100vw;
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--dark-bg);
+}

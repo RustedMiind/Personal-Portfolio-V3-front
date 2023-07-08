@@ -1,0 +1,54 @@
+.navigation-effect {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  pointer-events: none;
+  .effect-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 1500ms ease-in-out;
+    left: 100%;
+    background-color: var(--main);
+    &#pg1 {
+      background-color: var(--sec-light);
+    }
+    &#pg2 {
+      background-color: var(--main);
+    }
+    &#pg3 {
+      background-color: var(--main-light);
+    }
+    &#pg4 {
+      background-color: var(--sec);
+    }
+    &#pg5 {
+      background-color: var(--dark-bg);
+    }
+    &:nth-of-type(2n) {
+      left: -100%;
+    }
+    @for $i from 1 through 10 {
+      &:nth-of-type(#{$i}) {
+        transition-delay: #{$i * 125}ms;
+      }
+    }
+  }
+  &.loading {
+    .effect-page {
+      left: 0;
+    }
+  }
+  &.stopped {
+    .effect-page {
+      @for $i from 1 through 10 {
+        &:nth-of-type(#{$i}) {
+          transition-delay: #{10 / $i * 50}ms;
+        }
+      }
+    }
+  }
+}

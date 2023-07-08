@@ -1,0 +1,65 @@
+:root {
+  --main: #d6d6d6;
+  --main-dark: #0a101c;
+  --main-light: #615c66;
+  --light: white;
+  --light-bg: white;
+  --med-light-bg: #615c66;
+  --main-bg: #292b3f;
+  --darkest-bg: #03070e;
+  --dark-bg: #0a101c;
+  --sec: #fe1542;
+  --sec-light: #eb395c;
+  --sec-dark: #b60629;
+}
+
+$main: var(--main);
+$mainDark: var(--main-dark);
+$mainLight: var(--main-light);
+$light: var(--light);
+$lightBg: var(--light-bg);
+$mainBg: var(--main-bg);
+$dark: var(--dark-bg);
+$sec: var(--sec);
+$secLight: var(--sec-light);
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+// font-family: 'Open Sans', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--main);
+  // font-family: "Open Sans", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Defaults */
+
+ul.def {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+  }
+  &:active {
+    color: inherit;
+  }
+  &:visited {
+    color: inherit;
+  }
+}
+button.def {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: inherit;
+}
