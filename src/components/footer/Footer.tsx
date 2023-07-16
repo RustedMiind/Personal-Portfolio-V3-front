@@ -8,7 +8,7 @@ function Footer() {
       <div className="container top">
         <section>
           <h2>ALI SOLIMAN</h2>
-          <h4>You are one step away from getting you project to life.</h4>
+          <h4>You are one step away from getting your project to life.</h4>
           <h4>
             <DelayedLink to="/contact">Contact me now</DelayedLink>
           </h4>

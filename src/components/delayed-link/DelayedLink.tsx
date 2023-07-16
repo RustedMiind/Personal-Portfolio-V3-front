@@ -5,7 +5,7 @@ import { NavigationProvider } from "../../contexts/NavigationContext";
 export default function DelayedLink({
   to,
   children,
-  timing = 5000,
+  timing = 4000,
   ...otherProps
 }: PropsTyps) {
   const [, dispatch] = useContext(NavigationProvider);

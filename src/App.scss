@@ -4,3 +4,56 @@
 .sec-dark-bg {
   background-color: var(--sec-dark);
 }
+.main-button {
+  transition: 400ms ease-in-out;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.6rem 1.2rem;
+  margin: 0.4em 0.6em;
+  margin-left: 0;
+  background-color: red;
+  position: relative;
+  display: inline-block;
+  font-size: 1.1em;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    var(--main-light) 100%
+  );
+  z-index: 1;
+  overflow: hidden;
+  &::after {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      270deg,
+      var(--sec-light) 0%,
+      var(--sec-dark) 100%
+    );
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 300ms ease-in-out;
+  }
+  &:hover {
+    border-radius: 0.4rem;
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+// Responsive For Screens
+@for $i from 0 through 20 {
+  $resolution: 1920 - $i * 50;
+  $font: ((16 * $resolution / 1920)+16)/2;
+  html {
+    @media (max-width : #{$resolution}px) {
+      font-size: #{$font}px;
+    }
+  }
+}

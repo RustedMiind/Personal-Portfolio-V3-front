@@ -1,0 +1,46 @@
+.page-view .projects-view {
+  .projects-container {
+    > h2 {
+      font-size: 3rem;
+      margin: 1rem 0;
+    }
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .imageOnHover {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: 600ms;
+    &.active {
+      opacity: 1;
+    }
+    .innerImage {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--darkest-bg);
+        opacity: 0.7;
+      }
+    }
+  }
+}

@@ -70,6 +70,28 @@ function Main(props: PropsType) {
             <p>Location: Helwan, Cairo, Egypt.</p>
           </div>
           <div className="section">
+            <h3>Work Experience</h3>
+            <h4>Vision Dimensions</h4>
+            <p>2023 - present</p>
+            <p>
+              As a React.js developer at Vision Dimensions, my primary
+              responsibility was to design and develop an in-house dashboard to
+              manage the company system. I gained extensive experience in
+              React.js and worked closely with the team to ensure the smooth
+              functioning of the dashboard.
+            </p>
+            <h4>Freelancer</h4>
+            <p>2023 - present</p>
+            <p>
+              I have worked as a freelance React.js developer for the past 2
+              years. During this time, I have gained extensive experience in
+              developing React applications, creating and managing APIs, and
+              implementing complex user interfaces. I have also collaborated
+              with clients to understand their needs and deliver high-quality
+              projects on time.
+            </p>
+          </div>
+          <div className="section">
             <h3>Hoppies and Interests</h3>
             <p>Playing Chess.</p>
             <p>Solving Programming Problems</p>
