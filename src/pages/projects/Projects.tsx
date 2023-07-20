@@ -26,6 +26,39 @@ function Projects() {
             live: "https://spotify-clonex.web.app/",
           }}
         />
+        <ProjectCard
+          imgUrl="https://ali-soliman.web.app/img/spotify_clone_project.png"
+          imageState={[image, setImage]}
+          display={[display, setDisplay]}
+          content={{
+            title: "Spotify Clone",
+            describtion: "Spotify Clone Prooject",
+            github: "https://github.com/RustedMiind/Spotify-Clone",
+            live: "https://spotify-clonex.web.app/",
+          }}
+        />
+        <ProjectCard
+          imgUrl="https://ali-soliman.web.app/img/spotify_clone_project.png"
+          imageState={[image, setImage]}
+          display={[display, setDisplay]}
+          content={{
+            title: "Spotify Clone",
+            describtion: "Spotify Clone Prooject",
+            github: "https://github.com/RustedMiind/Spotify-Clone",
+            live: "https://spotify-clonex.web.app/",
+          }}
+        />
+        <ProjectCard
+          imgUrl="https://ali-soliman.web.app/img/spotify_clone_project.png"
+          imageState={[image, setImage]}
+          display={[display, setDisplay]}
+          content={{
+            title: "Spotify Clone",
+            describtion: "Spotify Clone Prooject",
+            github: "https://github.com/RustedMiind/Spotify-Clone",
+            live: "https://spotify-clonex.web.app/",
+          }}
+        />
       </div>
     </div>
   );
