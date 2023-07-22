@@ -48,10 +48,15 @@
       &.right {
         position: relative;
         overflow: hidden;
+        .bg-image {
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
         .my-image {
-          transition: 0 ease-in-out;
-          width: 80%;
-          height: 80%;
+          width: 60%;
+          max-height: 80%;
           left: 50%;
           transform: translateX(-50%);
           position: absolute;

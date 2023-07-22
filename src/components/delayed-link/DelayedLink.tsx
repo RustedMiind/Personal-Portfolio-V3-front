@@ -5,24 +5,22 @@ import { NavigationProvider } from "../../contexts/NavigationContext";
 export default function DelayedLink({
   to,
   children,
-  timing = 4000,
+  timing = 2200,
   ...otherProps
 }: PropsTyps) {
   const [, dispatch] = useContext(NavigationProvider);
-  const history = useNavigate();
+  const navigate = useNavigate();
   function delayAndGo(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     e.preventDefault();
     dispatch({ type: "SET_LOADING" });
-    console.log("Case 1---");
+    // console.log("Case 1---");
     setTimeout(() => {
-      history(to);
-      dispatch({ type: "SET_NOT_LOADING" });
-      console.log("Case 2------");
+      navigate(to);
+      // console.log("Case 2------");
       setTimeout(() => {
-        dispatch({ type: "SET_DONE" });
-        console.log("Case 3---------");
-      }, timing / 2);
-    }, timing / 2);
+        dispatch({ type: "SET_NOT_LOADING" });
+      }, (timing / 2) * 1);
+    }, (timing / 2) * 1);
   }
 
   return (

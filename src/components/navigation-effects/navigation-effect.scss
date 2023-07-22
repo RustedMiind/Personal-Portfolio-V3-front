@@ -7,10 +7,11 @@
   z-index: 2000;
   pointer-events: none;
   .effect-page {
+    pointer-events: all;
     width: 100%;
     height: 100%;
     position: absolute;
-    transition: 1000ms ease-in-out;
+    transition: 900ms ease-in-out;
     left: 100%;
     background-color: var(--main);
     &#pg1 {
@@ -33,7 +34,7 @@
     }
     @for $i from 1 through 10 {
       &:nth-of-type(#{$i}) {
-        transition-delay: #{$i * 75}ms;
+        transition-delay: #{$i * 50}ms;
       }
     }
   }
@@ -46,7 +47,7 @@
     .effect-page {
       @for $i from 1 through 8 {
         &:nth-of-type(#{$i}) {
-          transition-delay: #{10 / $i * 35}ms;
+          transition-delay: #{80 / $i * 15}ms;
         }
       }
     }
