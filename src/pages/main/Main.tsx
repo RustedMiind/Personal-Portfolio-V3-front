@@ -117,18 +117,18 @@ function Main(props: PropsType) {
               </p>
             </div>
             <div className="section">
-              <h3>Hoppies and Interests</h3>
-              <p>Playing Chess.</p>
-              <p>Solving Programming Problems</p>
-              <p>Playing E-sports Games</p>
-            </div>
-            <div className="section">
               <h3>Tech Stack</h3>
               <p>React.js, NEXT.js, Redux</p>
               <p>TypeScript, JavaScript</p>
               <p>HTML, CSS, SASS</p>
               <p>Tailwind CSS, Bootstrap</p>
               <p>Node.js, Express.js, Mongodb, Mongoose</p>
+            </div>
+            <div className="section">
+              <h3>Hoppies and Interests</h3>
+              <p>Playing Chess.</p>
+              <p>Solving Programming Problems</p>
+              <p>Playing E-sports Games</p>
             </div>
           </div>
         </div>

@@ -9,23 +9,41 @@
   box-shadow: 0.2rem 0.2rem 1rem var(--darkest-bg);
   position: relative;
   overflow: hidden;
-  //   background-image: url("https://uizard.io/static/marketplace-website-plp-3a7d57c355d6847a1360c29533912349.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   &:nth-of-type(2n) {
     margin-left: -6rem;
   }
-  &::after {
-    content: "";
+  h2 {
+    font-size: 3.25rem;
+  }
+  h4 {
+    font-size: 1.375rem;
+    font-weight: 400;
+  }
+  .before-hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
+    padding: 0 5rem;
     height: 100%;
     width: 100%;
-    background-color: var(--darkest-bg);
-    opacity: 0.4;
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--darkest-bg);
+      opacity: 0.4;
+    }
   }
   .project-image {
     width: 100%;
@@ -49,13 +67,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 0 5rem;
-    h2 {
-      font-size: 3.25rem;
-    }
-    h4 {
-      font-size: 1.375rem;
-      font-weight: 400;
-    }
+
     &::before {
       content: "";
       height: 150%;

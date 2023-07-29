@@ -28,7 +28,9 @@ function ContactMeForm() {
       className="contact-me-form"
       onSubmit={(e) => {
         e.preventDefault();
-        submitHandler(() => {});
+        submitHandler(() => {
+          console.log("Form Submited");
+        });
       }}
     >
       <div className="section">

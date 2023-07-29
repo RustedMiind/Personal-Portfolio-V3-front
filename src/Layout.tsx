@@ -8,8 +8,15 @@ import Footer from "./components/footer/Footer";
 import Projects from "./pages/projects/Projects";
 import ContactMe from "./pages/contact-me/ContactMe";
 import { useEffect } from "react";
+import { Provider, useDispatch } from "react-redux";
+import { store } from "./redux/store";
+import { checkIsAdmin } from "./redux/middlewares/adminMiddleware";
 
 function AppLayout() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    checkIsAdmin(dispatch);
+  }, []);
   return (
     <BrowserRouter>
       <ScrollToTop />

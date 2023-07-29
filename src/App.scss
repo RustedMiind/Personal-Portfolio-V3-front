@@ -50,7 +50,7 @@
 // Responsive For Screens
 @for $i from 0 through 20 {
   $resolution: 1920 - $i * 50;
-  $font: ((16 * $resolution / 1920)+16)/2;
+  $font: ((16 * $resolution / 1920) + 16 * 3)/4;
   html {
     @media (max-width : #{$resolution}px) {
       font-size: #{$font}px;

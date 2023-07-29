@@ -47,6 +47,10 @@ function ProjectCard(props: PropsType) {
           )}
         </div>
       </div>
+      <div className="before-hover">
+        <h2>{props.content.title}</h2>
+        <h4>{props.content.describtion}</h4>
+      </div>
     </div>
   );
 }
