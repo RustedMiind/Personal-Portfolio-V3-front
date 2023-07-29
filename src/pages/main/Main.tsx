@@ -10,7 +10,10 @@ const scrollAction = () => {
   // console.log("action Deployed");
   if (menu && menu2 && scrolled) {
     menu.style.bottom = `-${(scrolled ? scrolled : 0) * 0.5}px`;
-    menu2.style.top = `${(scrolled ? scrolled : 0) * 0.9}px`;
+    menu2.style.transform = `translateY(${
+      (scrolled > 0 ? scrolled : 0) * 0.9
+    }px)`;
+    menu2.style.height = `${100 + scrolled / 80}%`;
     // menu.style.transform = `translateX(calc(-${
     //   (scrolled ? scrolled : 0) * 0.1
     // }px - 50%)) scale(${1 + scrolled / 1750})`;
@@ -37,7 +40,7 @@ function Main(props: PropsType) {
   }, []);
   return (
     <>
-      <div className="main-view" id="view">
+      <div className="main-view">
         <div className="intro">
           <div className="side left">
             <div className="intro-content">
