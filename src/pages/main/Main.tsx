@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./main-view.scss";
+import Projects from "../projects/Projects";
 const scrollAction = () => {
   const menu = document.getElementById("selectMe");
   const menu2 = document.getElementById("selectMe2");
@@ -120,6 +121,7 @@ function Main(props: PropsType) {
           </div>
         </div>
       </div>
+      <Projects />
     </>
   );
 }

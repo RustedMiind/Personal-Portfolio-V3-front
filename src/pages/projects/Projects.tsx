@@ -19,7 +19,7 @@ function Projects() {
     return state;
   });
   return (
-    <div className="projects-view" id="view">
+    <div /* className="projects-view" */ id="view">
       <div className={`imageOnHover  ${display ? "active" : ""}`}>
         <div
           className="innerImage"

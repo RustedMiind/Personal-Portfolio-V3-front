@@ -7,6 +7,7 @@ import {
   formErrorsType,
   initialFormErrors,
 } from "../../middlewares/ContactFormValidation";
+import domain from "../../statics/domain";
 
 function ContactMeForm() {
   const [form, dispatchForm] = useReducer(formReducer, initialFormState);
@@ -29,7 +30,14 @@ function ContactMeForm() {
       onSubmit={(e) => {
         e.preventDefault();
         submitHandler(() => {
-          console.log("Form Submited");
+          axios
+            .post(domain("messages/new"), form)
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         });
       }}
     >

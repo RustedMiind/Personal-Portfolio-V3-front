@@ -1,0 +1,78 @@
+.message-card {
+  //   width: 100%;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  background-color: var(--main-bg);
+  padding: 1rem;
+  border-radius: 0.6rem;
+  margin: 1rem 0;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: 300ms;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.555);
+  background: linear-gradient(50deg, var(--main-bg) 0%, var(--dark-bg) 100%);
+  &:nth-of-type(2n) {
+    background: linear-gradient(50deg, var(--dark-bg) 0%, var(--main-bg) 100%);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    transition: 150ms;
+    z-index: 1;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, var(--dark-bg) 0%, var(--main-bg) 100%);
+    opacity: 0;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+  > * {
+    z-index: 100;
+  }
+  .name-email-container,
+  .org-phone-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .name {
+      font-weight: 900;
+    }
+    .email {
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .org {
+      color: var(--sec-text);
+      font-weight: 700;
+    }
+  }
+  .subject {
+    width: 80%;
+    opacity: 0.8;
+  }
+}
+
+.message-open {
+  position: fixed;
+  top: 10rem;
+  left: 10rem;
+  width: 50rem;
+  background-color: var(--dark-bg);
+  box-shadow: 1rem 1rem 1rem gray;
+  z-index: 1000000;
+  padding: 1rem;
+}

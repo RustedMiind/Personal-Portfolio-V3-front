@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { Provider, useDispatch } from "react-redux";
 import { store } from "./redux/store";
 import { checkIsAdmin } from "./redux/middlewares/adminMiddleware";
+import AdminPage from "./pages/admin/AdminPage";
 
 function AppLayout() {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ function AppLayout() {
           <div className="page-view" id="view">
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/works" element={<Projects />} />
+              <Route path="/admin/*" element={<AdminPage />} />
               <Route path="/contact" element={<ContactMe />} />
             </Routes>
             <Footer />
