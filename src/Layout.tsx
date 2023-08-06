@@ -15,7 +15,13 @@ import { checkIsAdmin } from "./redux/middlewares/adminMiddleware";
 function AppLayout() {
   const dispatch = useDispatch();
   useEffect(() => {
-    checkIsAdmin(dispatch);
+    checkIsAdmin(dispatch)
+      .then(() => {
+        console.log("Hello From Success");
+      })
+      .catch(() => {
+        console.log("Hello From Error");
+      });
   }, []);
   return (
     <BrowserRouter>

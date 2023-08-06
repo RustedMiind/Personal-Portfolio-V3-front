@@ -15,7 +15,7 @@ export function checkIsAdmin(dispatch: Dispatch<AnyAction>) {
       })
       .catch((err) => {
         reject(err);
-        console.log("Error", err);
+        console.log("Admin Not Logged In ", err);
       });
   });
 }

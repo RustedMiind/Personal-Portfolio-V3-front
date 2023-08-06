@@ -1,41 +1,38 @@
 import { useEffect } from "react";
 import "./main-view.scss";
-// import myImage from "./myImage.png";
-// import bg from "./bg2.jpg";
 const scrollAction = () => {
   const menu = document.getElementById("selectMe");
   const menu2 = document.getElementById("selectMe2");
   const view = document.getElementById("view");
   const scrolled = view?.scrollTop;
-  // console.log("action Deployed");
   if (menu && menu2 && scrolled) {
+    menu.style.transition = "unset";
+    menu2.style.transition = "unset";
     menu.style.bottom = `-${(scrolled ? scrolled : 0) * 0.5}px`;
     menu2.style.transform = `translateY(${
-      (scrolled > 0 ? scrolled : 0) * 0.9
-    }px)`;
-    menu2.style.height = `${100 + scrolled / 80}%`;
-    // menu.style.transform = `translateX(calc(-${
-    //   (scrolled ? scrolled : 0) * 0.1
-    // }px - 50%)) scale(${1 + scrolled / 1750})`;
-  }
-  if (menu2 && scrolled) {
-    // menu2.style.top = `${(scrolled ? scrolled : 0) * 0.9}px`;
-    // menu.style.transform = `translateX(calc(-${
-    //   (scrolled ? scrolled : 0) * 0.1
-    // }px - 50%)) scale(${1 + scrolled / 1750})`;
+      (scrolled ? scrolled : 0) * 0.9
+    }px) scale(${1 + scrolled / 4000})`;
+    setTimeout(() => {
+      const scrolled = view?.scrollTop;
+      if (scrolled <= 0) {
+        menu.style.transition = "400ms";
+        menu2.style.transition = "400ms";
+        menu.style.bottom = `0px`;
+        menu2.style.transform = `translateY(0px)  scale(1)`;
+      }
+    }, 200);
   }
 };
 function Main(props: PropsType) {
   useEffect(() => {
-    // Change Image Position on scroll
+    scrollAction();
+
     const view = document.getElementById("view");
 
     view?.addEventListener("scroll", scrollAction);
-    // view && console.log("Event Added ++++++++++");
 
     return () => {
       view?.removeEventListener("scroll", scrollAction);
-      // view && console.log("Event Removed ----------");
     };
   }, []);
   return (
@@ -45,9 +42,6 @@ function Main(props: PropsType) {
           <div className="side left">
             <div className="intro-content">
               <h1>ALI SOLIMAN</h1>
-              <h4>// RustedMind</h4>
-              <h6>// ABOUT ME</h6>
-              <h5>Experienced Full Stack Web Developer // Front End Focused</h5>
               <p>
                 Hello! I'm Ali Soliman, a friendly and patient front end
                 developer passionate about crafting visually appealing and
@@ -63,17 +57,10 @@ function Main(props: PropsType) {
             <img
               id="selectMe2"
               className="bg-image"
-              // style={{ bottom: `-${props.scrolled / 2.25}px` }}
               src="/bg2-resized.jpg"
               alt=""
             />
-            <img
-              id="selectMe"
-              className="my-image"
-              // style={{ bottom: `-${props.scrolled / 2.25}px` }}
-              src="/myImage.png"
-              alt=""
-            />
+            <img id="selectMe" className="my-image" src="/myImage.png" alt="" />
           </div>
         </div>
         <div className="about">

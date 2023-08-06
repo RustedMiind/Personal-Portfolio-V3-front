@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 export const NavigationProvider = React.createContext<
   [StatusType, React.Dispatch<ActionType>]
->([{ status: "NONE" }, () => {}]);
+>([{ status: "LOADING" }, () => {}]);
 
 function NavigationContext({ children }: PropsType) {
   const [state, dispatch] = React.useReducer(reducer, { status: "NONE" });
