@@ -1,6 +1,7 @@
 import axios from "axios";
 import "./message-card.scss";
 import domain from "../../../../statics/domain";
+import { XOctagon } from "react-bootstrap-icons";
 
 function MessageCard({ data, open, updateMessages }: PropsType) {
   return (

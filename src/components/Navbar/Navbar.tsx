@@ -21,9 +21,9 @@ function Navbar() {
         {/* <li>
           <DelayedLink to="/about">About</DelayedLink>
         </li> */}
-        <li>
+        {/* <li>
           <DelayedLink to="/works">Works</DelayedLink>
-        </li>
+        </li> */}
         <li>
           <DelayedLink to="/contact">Contact</DelayedLink>
         </li>

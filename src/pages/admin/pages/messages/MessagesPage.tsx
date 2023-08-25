@@ -1,3 +1,4 @@
+import "./messages-page.scss";
 import { useEffect, useState } from "react";
 import MessageCard, {
   MessageType,

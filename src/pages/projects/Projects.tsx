@@ -14,9 +14,9 @@ function Projects() {
     console.log("Projects Page Loaded");
     requestSetProjects(dispatch);
   }, []);
-  const { projects } = useSelector((state: { projects: projectType[] }) => {
+  const projects = useSelector((state: { projects: projectType[] }) => {
     console.log(state);
-    return state;
+    return state.projects;
   });
   return (
     <div /* className="projects-view" */ id="view">

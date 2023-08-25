@@ -41,17 +41,19 @@ function Main(props: PropsType) {
       <div className="main-view">
         <div className="intro">
           <div className="side left">
-            <div className="intro-content">
-              <h1>ALI SOLIMAN</h1>
-              <p>
-                Hello! I'm Ali Soliman, a friendly and patient front end
-                developer passionate about crafting visually appealing and
-                user-friendly websites. With expertise in React.js, I am
-                dedicated to creating seamless digital experiences. I believe in
-                the power of collaboration and continuous learning, and I'm
-                excited to bring your ideas to life. Let's build something
-                amazing together!
-              </p>
+            <div className="tight-section">
+              <div className="intro-content">
+                <h1>ALI SOLIMAN</h1>
+                <p>
+                  Hello! I'm Ali Soliman, a friendly and patient front end
+                  developer passionate about crafting visually appealing and
+                  user-friendly websites. With expertise in React.js, I am
+                  dedicated to creating seamless digital experiences. I believe
+                  in the power of collaboration and continuous learning, and I'm
+                  excited to bring your ideas to life. Let's build something
+                  amazing together!
+                </p>
+              </div>
             </div>
           </div>
           <div className="side right">
@@ -66,7 +68,7 @@ function Main(props: PropsType) {
         </div>
         <div className="about">
           <h2>ABOUT ME</h2>
-          <div className="sections">
+          <div className="main-section">
             <div className="section">
               <h3>I am Ali Soliman</h3>
               <p>
@@ -87,11 +89,21 @@ function Main(props: PropsType) {
               <h4>Vision Dimensions</h4>
               <p>2023 - present</p>
               <p>
-                As a React.js developer at Vision Dimensions, my primary
-                responsibility was to design and develop an in-house dashboard
-                to manage the company system. I gained extensive experience in
-                React.js and worked closely with the team to ensure the smooth
-                functioning of the dashboard.
+                During my time as a React Front End Developer at Vision
+                Dimensions Company since 4/2023, I worked on two significant
+                projects. Firstly, I developed the front end of a dashboard that
+                oversees all organization management. Secondly, I created a
+                CMS-based website that allows users to view and request various
+                services provided by the company. The website link is
+                <a target="_blank" href="https://www.vd-2030.com/">
+                  {" "}
+                  www.vd-2030.com{" "}
+                </a>
+                , and the dashboard link is
+                <a target="_blank" href="https://visiondimensions.com/">
+                  {" "}
+                  visiondimensions.com{" "}
+                </a>
               </p>
               <h4>Freelancer</h4>
               <p>2023 - present</p>
