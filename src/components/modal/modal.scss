@@ -1,0 +1,48 @@
+.modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  transition: 600ms;
+  &.hiding {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &.showing {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .modal {
+    z-index: 10;
+    position: relative;
+    width: 40rem;
+    max-width: 95vw;
+    max-height: 80vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-radius: 0.6rem;
+    padding: 2rem;
+    box-shadow: 0.4rem 0.4rem 1rem black;
+    background-color: var(--dark-bg);
+    .content {
+      padding-top: 1rem;
+    }
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.4rem;
+      cursor: pointer;
+      &:hover {
+        color: var(--sec-light);
+      }
+    }
+  }
+}

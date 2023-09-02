@@ -16,6 +16,9 @@
   --sec-dark: #b60629;
   --shadow: #ffffff26;
   --sec-shadow: #fe154226;
+  --error: #dc2626;
+  --success: #4ade80;
+  --warning: #f59e0b;
 }
 
 $main: var(--main);
@@ -95,4 +98,48 @@ svg.bi {
   width: 1em;
   height: 1em;
   object-fit: cover;
+}
+
+.input-main {
+  resize: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.445);
+  border-radius: 0.3rem;
+  width: 100%;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.4rem 0.6rem;
+  font-family: inherit;
+  margin-bottom: 1rem;
+  &.error {
+    border: 2px solid #e11d48;
+  }
+}
+.textarea-main {
+  min-height: 10rem;
+  display: block;
+}
+
+.head-main {
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.btn-main {
+  width: fit-content;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.4rem;
+  background-color: var(--sec);
+  border: 1px solid var(--sec-dark);
+  color: var(--text-main);
+  transition: 400ms;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 0 0.2rem var(--sec-light);
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
 }

@@ -8,9 +8,14 @@ import {
   initialFormErrors,
 } from "../../middlewares/ContactFormValidation";
 import domain from "../../statics/domain";
+import Loader from "../../components/loader/Loader";
+import Toaster from "../../components/toaster/Toaster";
 
 function ContactMeForm() {
   const [form, dispatchForm] = useReducer(formReducer, initialFormState);
+  const [status, setStatus] = useState<"none" | "sent" | "sending" | "error">(
+    "none"
+  );
   const [formErrors, setFormErrors] =
     useState<formErrorsType>(initialFormErrors);
 
@@ -30,17 +35,36 @@ function ContactMeForm() {
       onSubmit={(e) => {
         e.preventDefault();
         submitHandler(() => {
+          setStatus("sending");
           axios
             .post(domain("messages/new"), form)
             .then((res) => {
+              setStatus("sent");
+              dispatchForm({ type: "RESET" });
               console.log(res);
             })
             .catch((err) => {
+              setStatus("error");
               console.log(err);
             });
         });
       }}
     >
+      {status === "sending" && <Loader />}
+      {status === "sent" && (
+        <Toaster
+          toaster={{
+            status: "success",
+            message: "Message Sent Succesfully",
+          }}
+        />
+      )}
+      {status === "error" && (
+        <Toaster
+          toaster={{ status: "error", message: "Error Sending Message" }}
+        />
+      )}
+      {status === "sending" && <Loader />}
       <div className="section">
         <label className={formErrors.name ? "error" : ""} htmlFor="name">
           Your Name <span>Please Enter a Correct Name</span>
@@ -48,6 +72,7 @@ function ContactMeForm() {
         <input
           type="text"
           name="name"
+          placeholder={"Your Name"}
           value={form.name}
           className={formErrors.name ? "error" : ""}
           onChange={(e) => {
@@ -65,6 +90,7 @@ function ContactMeForm() {
         <input
           type="text"
           name="organization"
+          placeholder={"Organization Name"}
           value={form.organization}
           className={formErrors.organization ? "error" : ""}
           onChange={(e) => {
@@ -79,6 +105,7 @@ function ContactMeForm() {
         <input
           type="text"
           name="email"
+          placeholder={"Email"}
           value={form.email}
           className={formErrors.email ? "error" : ""}
           onChange={(e) => {
@@ -93,6 +120,7 @@ function ContactMeForm() {
         <input
           type="tel"
           name="phone"
+          placeholder={"Phone"}
           value={form.phone}
           className={formErrors.phone ? "error" : ""}
           onChange={(e) => {
@@ -107,6 +135,7 @@ function ContactMeForm() {
         <input
           type="text"
           name="subject"
+          placeholder={"Subject"}
           value={form.subject}
           className={formErrors.subject ? "error" : ""}
           onChange={(e) => {
@@ -120,6 +149,7 @@ function ContactMeForm() {
         </label>
         <textarea
           name="message"
+          placeholder={"Email"}
           value={form.message}
           className={formErrors.message ? "error" : ""}
           onChange={(e) => {
@@ -148,6 +178,8 @@ function formReducer(state: FormType, action: FormActions): FormType {
       return { ...state, subject: action.payload };
     case "MESSAGE":
       return { ...state, message: action.payload };
+    case "RESET":
+      return initialFormState;
     default:
       return state;
   }
@@ -162,10 +194,12 @@ const initialFormState = {
   message: "",
 };
 
-type FormActions = {
-  type: ActionTypes;
-  payload: string;
-};
+type FormActions =
+  | {
+      type: ActionTypes;
+      payload: string;
+    }
+  | { type: "RESET" };
 
 type ActionTypes =
   | "EMAIL"
