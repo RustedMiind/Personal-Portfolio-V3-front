@@ -5,6 +5,7 @@ import { adminType } from "../../redux/reducers/adminSlice";
 import { useState } from "react";
 import Modal from "../modal/Modal";
 import { adminLogin } from "../../redux/middlewares/adminMiddleware";
+import { setCookie } from "../../middlewares/cookies";
 
 function Navbar() {
   const admin = useSelector((state: { admin: adminType }) => state.admin);
@@ -43,7 +44,12 @@ function Navbar() {
               className="contact-me-form"
               onSubmit={(e) => {
                 e.preventDefault();
-                adminLogin(dispatch, { username, password });
+                adminLogin(dispatch, { username, password })
+                  .then((result) => {
+                    const res = result as adminType;
+                    if (res.isAdmin) setCookie("jwt", res.token, 10);
+                  })
+                  .catch((err) => {});
               }}
             >
               <div className="section">

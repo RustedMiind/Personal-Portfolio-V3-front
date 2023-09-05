@@ -13,10 +13,8 @@ export default function DelayedLink({
   function delayAndGo(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     e.preventDefault();
     dispatch({ type: "SET_LOADING" });
-    // console.log("Case 1---");
     setTimeout(() => {
       navigate(to);
-      // console.log("Case 2------");
       setTimeout(() => {
         dispatch({ type: "SET_NOT_LOADING" });
       }, (timing / 2) * 1);

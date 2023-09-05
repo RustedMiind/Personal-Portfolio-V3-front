@@ -17,12 +17,8 @@ function AppLayout() {
   const dispatch = useDispatch();
   useEffect(() => {
     checkIsAdmin(dispatch)
-      .then(() => {
-        console.log("Hello From Success");
-      })
-      .catch(() => {
-        console.log("Hello From Error");
-      });
+      .then(() => {})
+      .catch(() => {});
   }, []);
   return (
     <BrowserRouter>
@@ -56,9 +52,7 @@ function ScrollToTop() {
 
   useEffect(() => {
     const view = document.getElementById("view");
-    // console.log(view);
     view?.scrollTo(0, 0);
-    // console.log("Scrolled to top", view);
   }, [pathname]);
 
   return null;

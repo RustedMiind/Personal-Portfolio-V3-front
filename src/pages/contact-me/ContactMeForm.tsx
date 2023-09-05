@@ -41,11 +41,9 @@ function ContactMeForm() {
             .then((res) => {
               setStatus("sent");
               dispatchForm({ type: "RESET" });
-              console.log(res);
             })
             .catch((err) => {
               setStatus("error");
-              console.log(err);
             });
         });
       }}

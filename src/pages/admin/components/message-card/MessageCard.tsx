@@ -11,13 +11,10 @@ function MessageCard({ data, open, updateMessages }: PropsType) {
         axios
           .get(domain(`messages/read/${data._id}`))
           .then((res) => {
-            console.log("Message Seen ", res);
             open(data);
             updateMessages(res.data);
           })
-          .catch(() => {
-            console.log("error seeing message");
-          });
+          .catch(() => {});
       }}
     >
       <div className="name-email-container">

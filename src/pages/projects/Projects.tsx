@@ -11,11 +11,9 @@ function Projects() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("Projects Page Loaded");
     requestSetProjects(dispatch);
   }, []);
   const projects = useSelector((state: { projects: projectType[] }) => {
-    console.log(state);
     return state.projects;
   });
   return (

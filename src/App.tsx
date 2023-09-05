@@ -1,11 +1,10 @@
 import axios from "axios";
 import "./App.scss";
 import AppLayout from "./Layout";
-import domain from "./statics/domain";
-axios.defaults.withCredentials = true;
-axios.defaults.headers.common = {
-  "Access-Control-Allow-Origin": "*",
-};
+import { getCookie } from "./middlewares/cookies";
+import { setTokenHeader } from "./middlewares/setTokenCookie";
+// axios.defaults.withCredentials = true;
+setTokenHeader();
 
 function App() {
   return <AppLayout />;

@@ -33,7 +33,6 @@ export function doesFormContainsErrors(form: FormType): formErrorsType | false {
       break;
     }
   }
-  // console.log("is clean form: ", cleanForm);
   return cleanForm ? false : formErrors;
 }
 

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface adminStateType {
-  admin: adminType;
+  admin: adminTypeState;
 }
 
 const initialState: adminStateType = {
@@ -21,11 +21,16 @@ export const adminSlice = createSlice({
   },
 });
 
+export type adminTypeState = adminType | { isAdmin: false };
 export type adminType = {
-  isAdmin: boolean;
-  _id?: string;
-  name?: string;
-  username?: string;
+  isAdmin: true;
+  _id: string;
+  name: string;
+  username: string;
+  password: string;
+  createdAt: string;
+  updatedAt: string;
+  token: string;
 };
 
 export const { setAdmin } = adminSlice.actions;

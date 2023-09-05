@@ -19,9 +19,7 @@ function MessagesPage() {
       .then((res) => {
         setMessages(res.data);
       })
-      .catch((err) => {
-        console.log("Error Fetching Messages ", err);
-      });
+      .catch((err) => {});
   }, []);
 
   return (
