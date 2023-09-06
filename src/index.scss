@@ -100,6 +100,26 @@ svg.bi {
   object-fit: cover;
 }
 
+.input-section {
+  width: 100%;
+  padding: 0.6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  label {
+    display: block;
+    margin-bottom: 0.4rem;
+    span {
+      display: none;
+    }
+    &.error span {
+      display: inline;
+      font-size: 0.9em;
+      color: #fda4af;
+    }
+  }
+}
+
 .input-main {
   resize: none;
   outline: none;
@@ -114,6 +134,10 @@ svg.bi {
   padding: 0.4rem 0.6rem;
   font-family: inherit;
   margin-bottom: 1rem;
+  transition: 200ms;
+  &:focus {
+    box-shadow: 0 0 0.1rem 0.1rem var(--sec-text);
+  }
   &.error {
     border: 2px solid #e11d48;
   }

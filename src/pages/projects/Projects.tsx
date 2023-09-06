@@ -36,10 +36,10 @@ function Projects() {
               imageState={[image, setImage]}
               display={[display, setDisplay]}
               content={{
-                title: project.title,
+                title: project.name,
                 describtion: project.describtion,
                 github: project.github,
-                live: project.live,
+                live: project.url,
               }}
             />
           ))}

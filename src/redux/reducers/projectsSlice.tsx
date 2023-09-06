@@ -18,14 +18,16 @@ export const projectsSlice = createSlice({
   },
 });
 
-export type projectType = {
-  _id: string;
-  title: string;
+export interface projectSendType {
+  name: string;
   image: string;
   describtion?: string;
   github: string;
-  live?: string;
-};
+  url?: string;
+}
+export interface projectType extends projectSendType {
+  _id: string;
+}
 
 export const { setProjects } = projectsSlice.actions;
 export default projectsSlice.reducer;

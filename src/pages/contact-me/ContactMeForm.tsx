@@ -64,7 +64,7 @@ function ContactMeForm() {
       )}
       {status === "sending" && <Loader />}
       <div className="section">
-        <label className={formErrors.name ? "error" : ""} htmlFor="name">
+        <label className={` ${formErrors.name ? "error" : ""}`} htmlFor="name">
           Your Name <span>Please Enter a Correct Name</span>
         </label>
         <input
@@ -72,7 +72,7 @@ function ContactMeForm() {
           name="name"
           placeholder={"Your Name"}
           value={form.name}
-          className={formErrors.name ? "error" : ""}
+          className={`input-main ${formErrors.name ? "error" : ""}`}
           onChange={(e) => {
             dispatchForm({ type: "NAME", payload: e.target.value });
           }}
@@ -80,7 +80,7 @@ function ContactMeForm() {
       </div>
       <div className="section">
         <label
-          className={formErrors.organization ? "error" : ""}
+          className={` ${formErrors.organization ? "error" : ""}`}
           htmlFor="organization"
         >
           Organization Name <span>Please Fill in the input field</span>{" "}
@@ -90,14 +90,17 @@ function ContactMeForm() {
           name="organization"
           placeholder={"Organization Name"}
           value={form.organization}
-          className={formErrors.organization ? "error" : ""}
+          className={`input-main ${formErrors.organization ? "error" : ""}`}
           onChange={(e) => {
             dispatchForm({ type: "ORGANIZATION", payload: e.target.value });
           }}
         />
       </div>
       <div className="section">
-        <label className={formErrors.email ? "error" : ""} htmlFor="email">
+        <label
+          className={` ${formErrors.email ? "error" : ""}`}
+          htmlFor="email"
+        >
           Email <span>Please Enter a valid Email Address</span>
         </label>
         <input
@@ -105,14 +108,17 @@ function ContactMeForm() {
           name="email"
           placeholder={"Email"}
           value={form.email}
-          className={formErrors.email ? "error" : ""}
+          className={`input-main ${formErrors.email ? "error" : ""}`}
           onChange={(e) => {
             dispatchForm({ type: "EMAIL", payload: e.target.value });
           }}
         />
       </div>
       <div className="section">
-        <label className={formErrors.phone ? "error" : ""} htmlFor="phone">
+        <label
+          className={` ${formErrors.phone ? "error" : ""}`}
+          htmlFor="phone"
+        >
           Phone <span>Please Enter a valid Phone Number</span>
         </label>
         <input
@@ -120,14 +126,17 @@ function ContactMeForm() {
           name="phone"
           placeholder={"Phone"}
           value={form.phone}
-          className={formErrors.phone ? "error" : ""}
+          className={`input-main ${formErrors.phone ? "error" : ""}`}
           onChange={(e) => {
             dispatchForm({ type: "PHONE", payload: e.target.value });
           }}
         />
       </div>
       <div className="section">
-        <label className={formErrors.subject ? "error" : ""} htmlFor="subject">
+        <label
+          className={` ${formErrors.subject ? "error" : ""}`}
+          htmlFor="subject"
+        >
           Subject <span>Please Enter The Subject of your message</span>
         </label>
         <input
@@ -135,21 +144,24 @@ function ContactMeForm() {
           name="subject"
           placeholder={"Subject"}
           value={form.subject}
-          className={formErrors.subject ? "error" : ""}
+          className={`input-main ${formErrors.subject ? "error" : ""}`}
           onChange={(e) => {
             dispatchForm({ type: "SUBJECT", payload: e.target.value });
           }}
         />
       </div>
       <div className="section">
-        <label className={formErrors.message ? "error" : ""} htmlFor="message">
+        <label
+          className={` ${formErrors.message ? "error" : ""}`}
+          htmlFor="message"
+        >
           Enter Your Message <span>Please Enter Your Message</span>{" "}
         </label>
         <textarea
           name="message"
           placeholder={"Email"}
           value={form.message}
-          className={formErrors.message ? "error" : ""}
+          className={`input-main ${formErrors.message ? "error" : ""}`}
           onChange={(e) => {
             dispatchForm({ type: "MESSAGE", payload: e.target.value });
           }}

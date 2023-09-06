@@ -47,6 +47,7 @@ function Navbar() {
                 adminLogin(dispatch, { username, password })
                   .then((result) => {
                     const res = result as adminType;
+                    setLoginModal("hidden");
                     if (res.isAdmin) setCookie("jwt", res.token, 10);
                   })
                   .catch((err) => {});
