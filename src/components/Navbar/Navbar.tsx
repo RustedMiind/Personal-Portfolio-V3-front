@@ -10,6 +10,7 @@ import { setCookie } from "../../middlewares/cookies";
 function Navbar() {
   const admin = useSelector((state: { admin: adminType }) => state.admin);
   const dispatch = useDispatch();
+  console.log(admin);
   const [loginModal, setLoginModal] = useState<"visible" | "hidden">("hidden");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

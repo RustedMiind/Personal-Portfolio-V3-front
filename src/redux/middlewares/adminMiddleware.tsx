@@ -26,6 +26,7 @@ export function adminLogin(
     axios
       .post<adminType>(domain("admin/login"), data)
       .then((res) => {
+        console.log(res);
         dispatch(setAdmin({ admin: { ...res.data, isAdmin: true } }));
         setTokenCookie(res.data.token);
         resolve(res.data);

@@ -13,6 +13,7 @@ export const adminSlice = createSlice({
   initialState,
   reducers: {
     setAdmin: (state, action) => {
+      console.log(action);
       return {
         isAdmin: true,
         ...action.payload.admin,

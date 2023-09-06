@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Facebook, Linkedin, Github, Instagram } from "react-bootstrap-icons";
 import DelayedLink from "../delayed-link/DelayedLink";
 import "./footer.scss";
@@ -17,16 +18,19 @@ function Footer() {
           <p>Phone: +20 109 557 4449 / +20 155 644 9557</p>
           <p>Email: alisolimanworks@gmail.com</p>
           <p>
-            Resume: <a href="/public/logo192.png">Download</a>
+            Resume:{" "}
+            <a href="./Ali Soliman - Resume.pdf" download>
+              Download
+            </a>
           </p>
         </section>
         <section>
           <p>
             <DelayedLink to="/">Home</DelayedLink>
           </p>
-          <p>
+          {/* <p>
             <DelayedLink to="/works">Works</DelayedLink>
-          </p>
+          </p> */}
           <p>
             <DelayedLink to="/contact">Contact</DelayedLink>
           </p>
@@ -35,22 +39,22 @@ function Footer() {
       <div className="hr"></div>
       <div className="container bottom">
         <div className="icon-container">
-          <a target="_blank" href="">
+          <a target="_blank" href="https://www.facebook.com/Ra7ieM">
             <Facebook />
           </a>
         </div>
         <div className="icon-container">
-          <a target="_blank" href="">
+          <a target="_blank" href="https://www.linkedin.com/in/rustedmind/">
             <Linkedin />
           </a>
         </div>
         <div className="icon-container">
-          <a target="_blank" href="">
+          <a target="_blank" href="https://github.com/RustedMiind">
             <Github />
           </a>
         </div>
         <div className="icon-container">
-          <a target="_blank" href="">
+          <a target="_blank" href="https://www.instagram.com/alisolimannn/">
             <Instagram />
           </a>
         </div>
