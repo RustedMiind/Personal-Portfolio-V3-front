@@ -1,9 +1,17 @@
+@import "../../sass/breakpoints";
+
 .contact-me-page {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   > div {
     width: 50%;
+    @include TabletOrLess {
+      width: 100%;
+    }
+  }
+  @include TabletOrLess {
+    flex-direction: column;
   }
   .static-contact-info .content {
     padding: 6rem 2rem;
@@ -11,6 +19,10 @@
     flex-direction: column;
     align-items: end;
     text-align: right;
+    @include TabletOrLess {
+      align-items: start;
+      text-align: start;
+    }
     > h2 {
       font-size: 2.4rem;
       margin-bottom: 0.2rem;
@@ -20,6 +32,9 @@
       width: 50%;
       // opacity: 0.8;
       margin-bottom: 2rem;
+      @include TabletOrLess {
+        width: 80%;
+      }
     }
     > .back {
       a {
@@ -46,6 +61,10 @@
 
 .contact-form-container {
   padding: 4rem;
+
+  @include TabletOrLess {
+    padding: 1rem;
+  }
   form.contact-me-form {
     width: 100%;
     max-width: 35rem;

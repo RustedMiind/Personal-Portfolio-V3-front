@@ -1,3 +1,5 @@
+@import "../../sass/breakpoints";
+
 .page-view .main-view {
   color: var(--main);
   // height: 250vh;
@@ -16,33 +18,33 @@
       width: 50%;
       height: 100vh;
       &.left {
-        background-color: var(--darkest-bg);
-        .intro-content {
-          width: 100%;
-          h1 {
-            font-size: 5rem;
-            // margin-bottom: r?em;
-            line-height: 0.9em;
-            letter-spacing: 0.125em;
-          }
-          h4 {
-            font-size: 1.75rem;
-            font-weight: 500;
-            margin-bottom: 0.6rem;
-          }
-          h5 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-          }
-          h6 {
-            font-size: 1.125rem;
-            font-weight: 300;
-            margin-bottom: 0.6rem;
-          }
-          p {
-            font-size: 1.125rem;
-            font-weight: 300;
-          }
+      }
+      background-color: var(--darkest-bg);
+      .intro-content {
+        width: 100%;
+        h1 {
+          font-size: 5rem;
+          // margin-bottom: r?em;
+          line-height: 0.9em;
+          letter-spacing: 0.125em;
+        }
+        h4 {
+          font-size: 1.75rem;
+          font-weight: 500;
+          margin-bottom: 0.6rem;
+        }
+        h5 {
+          font-size: 1.25rem;
+          margin-bottom: 1rem;
+        }
+        h6 {
+          font-size: 1.125rem;
+          font-weight: 300;
+          margin-bottom: 0.6rem;
+        }
+        p {
+          font-size: 1.125rem;
+          font-weight: 300;
         }
       }
       &.right {
@@ -62,6 +64,20 @@
           position: absolute;
           bottom: 0;
           object-fit: contain;
+        }
+      }
+    }
+
+    @include Mobile {
+      height: 100vh;
+      flex-direction: column-reverse;
+      .side {
+        width: 100%;
+      }
+      .intro-content {
+        h1 {
+          font-size: 3rem !important;
+          margin-bottom: 1rem;
         }
       }
     }

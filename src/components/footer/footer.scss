@@ -1,3 +1,5 @@
+@import "../../sass/breakpoints";
+
 footer.footer {
   background-color: var(--darkest-bg);
   display: flex;
@@ -5,14 +7,20 @@ footer.footer {
   align-items: center;
   width: 100%;
   padding: 8rem 10rem;
+  @include TabletOrLess {
+    padding: 4rem 1rem;
+  }
   .container {
     width: 100%;
     &.top {
       display: flex;
       align-items: start;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
       section {
         width: 30%;
+        min-width: 15rem;
         h2 {
           padding: 0.4rem 0;
         }
@@ -31,6 +39,8 @@ footer.footer {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
       .icon-container {
         font-size: 1.75rem;
         line-height: 0;
